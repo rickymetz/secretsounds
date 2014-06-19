@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+<head>
+	<title>Title of the document</title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+
+<body>
+	<header class="headroom">
+		<nav>
+			<ul>
+				<li> 
+					<a href="#">Link</a>
+				</li>
+				<li> 
+					<a href="#">Link2</a>
+				</li>
+				<li> 
+					<a href="#">Link3</a>
+				</li>
+				<li> 
+					<a href="#">Link</a>
+				</li>
+			</ul>	
+		</nav>
+	</header>		
+
+	<div class="container">
+		<div class="post">
+			<div class="play">
+				<h2>&#9654;</h2>
+			</div>
+			<div class="top-piece">
+				<h2>This is my confession</h2>
+			</div>
+			<div class="bottom-piece">
+			<ul class="listendate">
+				<li>128 listens</li>
+				<li>June 20</li>
+			</ul>
+			<ul class="tags">
+				<li>Sad</li>
+				<li>confession</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<script src="https://rawgithub.com/WickyNilliams/headroom.js/gh-pages/assets/scripts/main.js"></script>
+	<script>
+// grab an element
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init(); 
+</script>
+</body>
+
+</html>

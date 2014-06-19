@@ -1,0 +1,45 @@
+//font stack
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:700italic);
+
+%serif{
+	font-family: 'Droid Serif', serif;
+}
+%sans{
+	font-family: 'Droid Sans', sans-serif;
+}
+
+//font sizing
+$h4-size: $type-size * $type-scale;
+$h3-size: $h4-size * $type-scale;
+$h2-size: $h3-size * $type-scale;
+$h1-size: $h2-size * $type-scale;
+$h5-size: $h4-size / $type-scale;
+$h6-size: $h5-size / $type-scale;
+
+h1, h2, h3, h4, h5, h6{
+	@extend %serif;
+}
+
+
+h1 {
+	font-size: $h1-size;
+}
+h2 {
+	font-size: $h2-size;
+}
+h3 {
+	font-size: $h3-size;
+}
+h4 {
+	font-size: $h4-size;
+}
+h5 {
+	font-size: $h5-size;
+}
+h6 {
+	font-size: $h6-size;
+}
+p{
+	font-size: $type-size;
+	@extend %sans;
+}
