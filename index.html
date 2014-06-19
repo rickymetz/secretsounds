@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
 <head>
-	<title>Title of the document</title>
+	<title>Secret Sounds</title>
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 </head>
 
 <body>
-	<header class="headroom">
+	<header class=" animated fadeIn headroom">
 		<nav>
 			<ul>
 				<li> 
@@ -28,7 +29,7 @@
 	</header>		
 
 	<div class="container">
-		<div class="post">
+		<div class="wow fadeInUp post">
 			<div class="play">
 				<a href="#">
         			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
@@ -53,7 +54,7 @@
 			</div>
 		</div>
 
-		<div class="post">
+		<div class="wow fadeInUp post">
 			<div class="play">
 				<a href="#">
         			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
@@ -78,7 +79,7 @@
 			</div>
 		</div>
 
-		<div class="post">
+		<div class="wow fadeInUp post">
 			<div class="play">
 				<a href="#">
         			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
@@ -102,6 +103,58 @@
 				</div>
 			</div>
 		</div>
+
+
+		<div class="wow fadeInUp post">
+			<div class="play">
+				<a href="#">
+        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
+    			</a>
+			</div>
+			<div class="post-content">
+				<div class="top-piece">
+					<h2>Dad went out for cigarettes 20 years ago...</h2>
+				</div>
+				<div class="bottom-piece">
+					<ul class="listendate">
+						<li><span>128</span> listens</li>
+						<li>June 20</li>
+					</ul>
+					<ul class="tags">
+						<li>sad</li>
+						<li>confession</li>
+						<li>foreveralone</li>
+						<li>friendzone</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="wow fadeInUp post">
+			<div class="play">
+				<a href="#">
+        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
+    			</a>
+			</div>
+			<div class="post-content">
+				<div class="top-piece">
+					<h2>Dad went out for cigarettes 20 years ago...</h2>
+				</div>
+				<div class="bottom-piece">
+					<ul class="listendate">
+						<li><span>128</span> listens</li>
+						<li>June 20</li>
+					</ul>
+					<ul class="tags">
+						<li>sad</li>
+						<li>confession</li>
+						<li>foreveralone</li>
+						<li>friendzone</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	<script src="https://rawgithub.com/WickyNilliams/headroom.js/gh-pages/assets/scripts/main.js"></script>
 	<script>
@@ -128,6 +181,17 @@ function toggle(el){
     
     return false;
 }
+</script>
+<script src="js/min.wow.js"></script>
+<script>
+wow = new WOW(
+  {
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // default
+    offset:       150         // default
+  }
+)
+ new WOW().init();
 </script>
 </body>
 
