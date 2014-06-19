@@ -11,16 +11,17 @@
 		<nav>
 			<ul>
 				<li> 
-					<a href="#">Link</a>
+					<a href="#">
+						<img src="img/question.svg" alt="What is this?"class="top-button">
+					</a>
 				</li>
 				<li> 
-					<a href="#">Link2</a>
+					<a href="#">Secret Sounds</a>
 				</li>
 				<li> 
-					<a href="#">Link3</a>
-				</li>
-				<li> 
-					<a href="#">Link</a>
+					<a href="#">
+						<img src="img/record.svg" alt="Click here to record"class="top-button">
+					</a>
 				</li>
 			</ul>	
 		</nav>
@@ -29,20 +30,76 @@
 	<div class="container">
 		<div class="post">
 			<div class="play">
-				<h2>&#9654;</h2>
+				<a href="#">
+        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
+    			</a>
 			</div>
-			<div class="top-piece">
-				<h2>This is my confession</h2>
+			<div class="post-content">
+				<div class="top-piece">
+					<h2>Dad went out for cigarettes 20 years ago...</h2>
+				</div>
+				<div class="bottom-piece">
+					<ul class="listendate">
+						<li><span>128</span> listens</li>
+						<li>June 20</li>
+					</ul>
+					<ul class="tags">
+						<li>sad</li>
+						<li>confession</li>
+						<li>foreveralone</li>
+						<li>friendzone</li>
+					</ul>
+				</div>
 			</div>
-			<div class="bottom-piece">
-			<ul class="listendate">
-				<li>128 listens</li>
-				<li>June 20</li>
-			</ul>
-			<ul class="tags">
-				<li>Sad</li>
-				<li>confession</li>
-			</ul>
+		</div>
+
+		<div class="post">
+			<div class="play">
+				<a href="#">
+        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
+    			</a>
+			</div>
+			<div class="post-content">
+				<div class="top-piece">
+					<h2>Dad went out for cigarettes 20 years ago...</h2>
+				</div>
+				<div class="bottom-piece">
+					<ul class="listendate">
+						<li><span>128</span> listens</li>
+						<li>June 20</li>
+					</ul>
+					<ul class="tags">
+						<li>sad</li>
+						<li>confession</li>
+						<li>foreveralone</li>
+						<li>friendzone</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="post">
+			<div class="play">
+				<a href="#">
+        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
+    			</a>
+			</div>
+			<div class="post-content">
+				<div class="top-piece">
+					<h2>Dad went out for cigarettes 20 years ago...</h2>
+				</div>
+				<div class="bottom-piece">
+					<ul class="listendate">
+						<li><span>128</span> listens</li>
+						<li>June 20</li>
+					</ul>
+					<ul class="tags">
+						<li>sad</li>
+						<li>confession</li>
+						<li>foreveralone</li>
+						<li>friendzone</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -54,6 +111,23 @@ var myElement = document.querySelector("header");
 var headroom  = new Headroom(myElement);
 // initialise
 headroom.init(); 
+</script>
+
+<script>
+function toggle(el){
+    if(el.className!="pause")
+    {
+        el.src='img/pause.svg';
+        el.className="pause";
+    }
+    else if(el.className=="pause")
+    {
+        el.src='img/play.svg';
+        el.className="play";
+    }
+    
+    return false;
+}
 </script>
 </body>
 

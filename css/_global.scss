@@ -1,3 +1,10 @@
+html{
+	-moz-padding-start: 0;
+	-webkit-padding-start: 0;
+	-khtml-padding-start: 0;
+	-o-padding-start: 0;
+}
+
 body{
 	color: $main-color;
 	background-color: $background-color;
@@ -9,46 +16,122 @@ header{
 	background-color: $main-color;
 	width: 100%;
 	top: 0;
-	height:65px;
+	height: 4em;
+	border-bottom: 4px solid $secondary-color;
+	z-index: 1;
 	& ul{
 		list-style-type: none;
-		margin: 30px auto 0;
+		margin: 1.5em auto 0;
 		padding: 0;
-		max-width: 600px;
+		max-width: 40em;
 		width:90%;
+		display: flex;
+		justify-content: space-around;
 		& li{
 			display:inline;
-			padding: 0 10px;
-			&:first-child{
-				padding:0 10px 0 0;
-			}
+			padding: 0 1em;
 			& a{
 				@extend %serif;
 				text-decoration: none;
-				color: $main-light;
+				color: white;
 				font-size: 1.25em;
 				&:hover{
 					color: $secondary-color;
+				}
+				& img{
+					height: 2em;
+					margin-top: -0.5em;
 				}
 			}
 		}
 	}
 }
 
-.container{
-	max-width:600px;
+.container{ 
+	margin: 6em auto;	
+}
+
+.play, .pause{
+	color: white;
+	position: absolute;
+	@include align(h);
+	top: 4em;
+	height: 4em;
+}
+.post{
+	max-width:40em;
 	width:90%;
-	margin: 100px auto;	
+	margin: 6em auto;	
 	background-color: white;
-	& h1{
-		font-size: 2em;
-		margin: 10px 0;
-		color: #556270;
+	position:relative;
+	box-shadow: 0 4px $tertiary-color;
+}
+
+.post-content{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.top-piece{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	background: $main-color;
+	min-height: 10em;
+	h2{
+		padding: 1em;
+		color: white;
+		text-align: center;
+		line-height: 1.25em;
 	}
-	& p{
-		font-size: 1.25em;
-		margin: 0 0 25px;
-		color: lightslategray;
-		line-height: 1.5em;
+}
+
+
+.listendate{
+	padding: 2em 2em 1em;
+}
+
+.tags{
+	padding: 1em 2em 2em;
+}
+
+ul.listendate{
+	padding: none;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	& li{
+		display:inline;
+		& span{
+			font-weight: bold;
+		}
 	}
+}
+
+ul.tags{
+	padding: none;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	& li{
+		padding: 0.25em;
+		color: $tertiary-color;
+		display:inline;
+		&::before
+			{ content:"#";
+		}
+		&:first-child{
+			padding-left:0;
+		}
+		&:last-child{
+			padding-right:0;
+		}
+	}
+
+
 }

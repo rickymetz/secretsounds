@@ -1,4 +1,5 @@
 /* colors */
+$background-color: #e8e8e8;
 
 $main-color: #270C32;
 $main-light: tint($main-color, 25%);
@@ -6,7 +7,7 @@ $main-dark: shade($main-color, 25%);
 
 $secondary-color: #E0745E;
 
-$background-color: #e8e8e8;
+$tertiary-color: shade($background-color, 25%);
 
 
 /* typography */

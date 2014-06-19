@@ -11,7 +11,54 @@
   align($direction: both)
   cf()
 */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:700italic);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 .headroom {
   position: fixed;
   top: 0;
@@ -28,7 +75,9 @@
 /* colors */
 /* typography */
 h1, h2, h3, h4, h5, h6, header ul li a {
-  font-family: 'Droid Serif', serif; }
+  font-family: 'Droid Serif', serif;
+  font-style: italic;
+  font-weight: bold; }
 
 p, body {
   font-family: 'Droid Sans', sans-serif; }
@@ -54,6 +103,12 @@ h6 {
 p {
   font-size: 1em; }
 
+html {
+  -moz-padding-start: 0;
+  -webkit-padding-start: 0;
+  -khtml-padding-start: 0;
+  -o-padding-start: 0; }
+
 body {
   color: #270c32;
   background-color: #e8e8e8;
@@ -63,36 +118,106 @@ header {
   background-color: #270c32;
   width: 100%;
   top: 0;
-  height: 65px; }
+  height: 4em;
+  border-bottom: 4px solid #e0745e;
+  z-index: 1; }
   header ul {
     list-style-type: none;
-    margin: 30px auto 0;
+    margin: 1.5em auto 0;
     padding: 0;
-    max-width: 600px;
-    width: 90%; }
+    max-width: 40em;
+    width: 90%;
+    display: flex;
+    justify-content: space-around; }
     header ul li {
       display: inline;
-      padding: 0 10px; }
-      header ul li:first-child {
-        padding: 0 10px 0 0; }
+      padding: 0 1em; }
       header ul li a {
         text-decoration: none;
-        color: #5d4865;
+        color: white;
         font-size: 1.25em; }
         header ul li a:hover {
           color: #e0745e; }
+        header ul li a img {
+          height: 2em;
+          margin-top: -0.5em; }
 
 .container {
-  max-width: 600px;
+  margin: 6em auto; }
+
+.play, .pause {
+  color: white;
+  position: absolute;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 4em;
+  height: 4em; }
+
+.post {
+  max-width: 40em;
   width: 90%;
-  margin: 100px auto;
-  background-color: white; }
-  .container h1 {
-    font-size: 2em;
-    margin: 10px 0;
-    color: #556270; }
-  .container p {
-    font-size: 1.25em;
-    margin: 0 0 25px;
-    color: lightslategray;
-    line-height: 1.5em; }
+  margin: 6em auto;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 4px #aeaeae; }
+
+.post-content {
+  display: flex;
+  flex-direction: column; }
+
+.top-piece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #270c32;
+  min-height: 10em; }
+  .top-piece h2 {
+    padding: 1em;
+    color: white;
+    text-align: center;
+    line-height: 1.25em; }
+
+.listendate {
+  padding: 2em 2em 1em; }
+
+.tags {
+  padding: 1em 2em 2em; }
+
+ul.listendate {
+  padding: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between; }
+  ul.listendate li {
+    display: inline; }
+    ul.listendate li span {
+      font-weight: bold; }
+
+ul.tags {
+  padding: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap; }
+  ul.tags li {
+    padding: 0.25em;
+    color: #aeaeae;
+    display: inline; }
+    ul.tags li::before {
+      content: "#"; }
+    ul.tags li:first-child {
+      padding-left: 0; }
+    ul.tags li:last-child {
+      padding-right: 0; }
