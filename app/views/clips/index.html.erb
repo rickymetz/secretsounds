@@ -1,0 +1,63 @@
+		<div class="wow fadeInUp post">
+			<div class="play">
+				<a href="#">
+        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
+    			</a>
+			</div>
+			<div class="post-content">
+				<div class="top-piece">
+					<h2>Dad went out for cigarettes 20 years ago...</h2>
+				</div>
+				<div class="bottom-piece">
+					<ul class="listendate">
+						<li><span>128</span> listens</li>
+						<li>June 20</li>
+					</ul>
+					<ul class="tags">
+						<li>sad</li>
+						<li>confession</li>
+						<li>foreveralone</li>
+						<li>friendzone</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	<script src="https://rawgithub.com/WickyNilliams/headroom.js/gh-pages/assets/scripts/main.js"></script>
+	<script type="text/javascript">
+    // grab an element
+    var myElement = document.querySelector("header");
+    // construct an instance of Headroom, passing the element
+    var headroom  = new Headroom(myElement);
+    // initialise
+    headroom.init(); 
+    </script>
+
+    <script>
+    function toggle(el){
+        if(el.className!="pause")
+        {
+            el.src='img/pause.svg';
+            el.className="pause";
+        }
+        else if(el.className=="pause")
+        {
+            el.src='img/play.svg';
+            el.className="play";
+        }
+        
+        return false;
+    }
+  </script>
+  <script src="js/min.wow.js"></script>
+  <script type="text/javascript">
+    wow = new WOW(
+      {
+        boxClass:     'wow',      // default
+        animateClass: 'animated', // default
+        offset:       150         // default
+      }
+    )
+    new WOW().init();
+  </script>
+
