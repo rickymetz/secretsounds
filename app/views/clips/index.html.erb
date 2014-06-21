@@ -1,8 +1,12 @@
 		<div class="wow fadeInUp post">
 			<div class="play">
-				<a href="#">
-        			<img src="img/play.svg" alt="play/pause"class="play" onclick="toggle(this);" />
-    			</a>
+          <%= link_to '#' do %>
+            <%= image_tag('play.svg',
+                  alt: 'play/pause',
+                  class: 'play',
+                  onclick: 'toggle(this)')
+             %>
+          <% end %>
 			</div>
 			<div class="post-content">
 				<div class="top-piece">
@@ -31,19 +35,19 @@
     var headroom  = new Headroom(myElement);
     // initialise
     headroom.init(); 
-    </script>
+  </script>
 
-    <script>
+  <script>
     function toggle(el){
         if(el.className!="pause")
         {
-            el.src='img/pause.svg';
-            el.className="pause";
+          el.src= "<%= image_path('pause.svg'); %>";
+          el.className="pause";
         }
         else if(el.className=="pause")
         {
-            el.src='img/play.svg';
-            el.className="play";
+          el.src= "<%= image_path('play.svg'); %>";
+          el.className="play";
         }
         
         return false;
