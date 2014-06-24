@@ -16,17 +16,21 @@ header{
 	background-color: $main-color;
 	width: 100%;
 	top: 0;
-	height: 4em;
+	height: 4.5em;
 	border-bottom: 4px solid $secondary-color;
 	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	& ul{
 		list-style-type: none;
-		margin: 1.5em auto 0;
+		margin: 0 auto 0;
 		padding: 0;
 		max-width: 40em;
 		width:90%;
 		display: flex;
-		justify-content: space-around;
+		align-items: center;
+  		justify-content: space-between;
 		& li{
 			display:inline;
 			& a{
@@ -40,12 +44,76 @@ header{
 				}
 				& img{
 					height: 2em;
-					margin-top: -0.5em;
 				}
 			}
 		}
 	}
 }
+
+.record-window{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  	justify-content: center;
+	height: 3em;
+	border: $secondary-color solid 0.067em;
+	width: 15em;
+	text-align:center;
+	border-radius: 0.25em;
+	
+}
+
+.wave-form{
+	display: flex;
+	align-items: center;
+	align-self: flex-start;
+	justify-content: center;
+	height: $wave-height;
+	width: 100%;
+	background-color: $main-color;
+	z-index: -1;
+	& a{
+		align-items: center;
+		align-self: flex-end;
+		display: flex;
+		&:hover{
+			color: $secondary-color;
+		}
+	}
+}
+
+@-webkit-keyframes recordingbar {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@-moz-keyframes recordingbar {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@-o-keyframes recordingbar {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes recordingbar {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+
+.record-countdown{
+	display: flex;
+	align-items: flex-start;
+	align-self: flex-start;
+	height: 100-$wave-height;
+	background-color: white;
+	z-index: -1;
+
+	animation: recordingbar 10s infinite;
+	-webkit-animation: recordingbar 10s infinite;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
+
 
 .container{ 
 	margin: 6em auto;	

@@ -1,13 +1,19 @@
 	<header class=" animated fadeIn headroom">
-		<nav>
+		<header>
 			<ul>
 				<li> 
           <%= link_to '#' do %>
             <%= image_tag('question.svg', alt: 'What is this?', class: 'top-button') %>
           <% end %>
 				</li>
-				<li> 
-          <%= link_to 'Secret Sounds', '#' %>
+				<li>
+				<div class="record-window"> 
+          			<div class="wave-form">
+          				<!--<%= link_to 'Sound Secrets', '#' %>-->
+          			</div>
+          			<div class="record-countdown">
+          			</div>
+      			</div>
 				</li>
 				<li> 
           <%= link_to '#' do %>
@@ -15,6 +21,6 @@
           <% end %>
 				</li>
 			</ul>	
-		</nav>
+		</header>
 	</header>		
 
