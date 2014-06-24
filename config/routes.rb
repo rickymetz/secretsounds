@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'clips#index' 
+  root to: 'application#index' 
+  resources :containers, path: '/c/'
 end
