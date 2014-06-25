@@ -17,9 +17,14 @@
       			</div>
 				</li>
 				<li> 
-          <%= link_to '#' do %>
+          <%= link_to '#', onclick: "startRecording(this)" do %>
             <%= image_tag('record.svg', alt: 'What is this?', class: 'top-button') %>
           <% end %>
+
+          <%= link_to '#', onclick: "stopRecording(this)" do %>
+            <%= image_tag('record.svg', alt: 'What is this?', class: 'top-button') %>
+          <% end %>
+
 				</li>
 			</ul>	
 		</header>

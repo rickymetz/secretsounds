@@ -6,7 +6,6 @@ function __log(e, data) {
 var audio_context;
 var recorder;
 
-
 function gotStream(stream) {
     inputPoint = audio_context.createGain();
 
@@ -21,7 +20,7 @@ function gotStream(stream) {
     analyserNode.fftSize = 2048;
     inputPoint.connect( analyserNode );
 
-    audioRecorder = new Recorder( inputPoint );
+    recorder = new Recorder( inputPoint );
 
     zeroGain = audio_context.createGain();
     zeroGain.gain.value = 0.0;
@@ -48,27 +47,26 @@ function startRecording(button) {
   __log('Recording...');
 }
 
+function gotBuffers( buffers ) {
+  var canvas = document.getElementById("wave");
+  drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
+
+  // the ONLY time gotBuffers is called is right after a new recording is completed - 
+  // so here's where we should set up the download.
+  //recorder.exportWAV( doneEncoding );
+}
+
 function stopRecording(button) {
   recorder && recorder.stop();
   button.disabled = true;
   button.previousElementSibling.disabled = false;
   __log('Stopped recording.');
 
-  // create WAV download link using audio data blob
-  createDownloadLink();
+  recorder.getBuffer(gotBuffers);
 
   recorder.clear();
 }
 
-function gotBuffers( buffers ) {
-  var canvas = document.getElementById("analyser");
-
-  drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
-
-  // the ONLY time gotBuffers is called is right after a new recording is completed - 
-  // so here's where we should set up the download.
-  audioRecorder.exportWAV( doneEncoding );
-}
 
 function drawBuffer( width, height, context, data ) {
     var step = Math.ceil( data.length / width );
